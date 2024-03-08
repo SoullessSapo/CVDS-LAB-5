@@ -1,0 +1,27 @@
+{
+  "name": "lab-6",
+  "version": "1.0.0",
+  "description": "4 parte lab 5 CVDS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoullessSapo/CVDS-LAB-5.git"
+  },
+  "keywords": [
+    "RestFull",
+    "API",
+    "learning"
+  ],
+  "author": "esteban valencia - Daniel Rojas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoullessSapo/CVDS-LAB-5/issues"
+  },
+  "homepage": "https://github.com/SoullessSapo/CVDS-LAB-5#readme"
+}
