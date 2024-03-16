@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number Game</title>
+</head>
 <body>
 
 <h2>Guess the Number</h2>
 
-<p>Balance: $<span id="balance">{{balance}}</span></p>
+<p>Balance: $<span th:text="${balance}"></span></p>
 
 <form action="/guess" method="post">
     <label for="number">Number:</label><br>
@@ -12,7 +16,7 @@
     <input type="submit" value="Guess">
 </form>
 
-<p id="result">{{result}}</p>
+<p th:text="${result}"></p>
 
 <form action="/reset" method="post">
     <input type="submit" value="Reset">
