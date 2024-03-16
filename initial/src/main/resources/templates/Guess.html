@@ -1,43 +1,22 @@
-import java.util.Random;
+<!DOCTYPE html>
+<html>
+<body>
 
-@Controller
-public class GreetingController {
-private int targetNumber;
-private int balance = 100000;
-private Random random = new Random();
+<h2>Guess the Number</h2>
 
-public GreetingController() {
-resetGame();
-}
+<p>Balance: $<span id="balance">{{balance}}</span></p>
 
-@GetMapping("/guess")
-public String guessForm(Model model) {
-model.addAttribute("balance", balance);
-return "guess";
-}
+<form action="/guess" method="post">
+    <label for="number">Number:</label><br>
+    <input type="number" id="number" name="number" min="1" max="10" required><br>
+    <input type="submit" value="Guess">
+</form>
 
-@PostMapping("/guess")
-public String guess(@RequestParam(name="number", required=true) int number, Model model) {
-if (number == targetNumber) {
-model.addAttribute("result", "You guessed it!");
-resetGame();
-} else {
-balance -= 10000;
-model.addAttribute("result", "Try again!");
-}
-model.addAttribute("balance", balance);
-return "guess";
-}
+<p id="result">{{result}}</p>
 
-@PostMapping("/reset")
-public String reset(Model model) {
-resetGame();
-model.addAttribute("balance", balance);
-return "guess";
-}
+<form action="/reset" method="post">
+    <input type="submit" value="Reset">
+</form>
 
-private void resetGame() {
-targetNumber = random.nextInt(10) + 1;
-balance = 100000;
-}
-}
+</body>
+</html>
